@@ -96,7 +96,7 @@ func Newf(msg string, a ...interface{}) error {
 }
 
 // New returns error with caller
-func Newff(msg string, fields Fields, a ...interface{}) error {
+func Newff(fields Fields, msg string, a ...interface{}) error {
 	return wrap(nil, fields, msg, a...)
 }
 
