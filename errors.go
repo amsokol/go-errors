@@ -1,15 +1,12 @@
 package errors
 
 import (
+	"bytes"
 	"fmt"
 	"path/filepath"
 	"runtime"
-	"bytes"
 	"strconv"
-	"strings"
 )
-
-type Fields map[string]interface{}
 
 type errorItem struct {
 	fileName string
@@ -17,13 +14,8 @@ type errorItem struct {
 	msg      string
 }
 
-type field struct {
-	name  string
-	value interface{}
-}
-
 type errors struct {
-	fields []field
+	fields fields
 	stack  []errorItem
 }
 
@@ -57,13 +49,12 @@ func wrap(err error, fields Fields, msg string, a ...interface{}) error {
 	errs.stack = append(errs.stack, item)
 
 	if fields != nil {
-		for name, value := range fields {
-			errs.fields = append(errs.fields, field{name: name, value: value})
-		}
+		errs.fields = append(errs.fields, fields.slice()...)
 	}
 
 	return errs
 }
+
 func (e *errors) Error() string {
 	var buf [1024]byte
 	msg := bytes.NewBuffer(buf[:0])
@@ -89,13 +80,8 @@ func (e *errors) Error() string {
 		msg.WriteString(";")
 	}
 
-	for _, f := range e.fields {
-		msg.WriteString(" ")
-		msg.WriteString(f.name)
-		msg.WriteString("=\"")
-		msg.WriteString(strings.Replace(fmt.Sprintf("%+v", f.value), "\"", "\\\"", -1))
-		msg.WriteString("\"")
-	}
+	e.fields.write(msg)
+
 	return msg.String()
 }
 

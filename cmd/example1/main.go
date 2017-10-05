@@ -20,7 +20,7 @@ func f13() error {
 }
 
 func f21() error {
-	return errors.Wrapff(f22(), errors.Fields{"q": "qqqq"}, "cause from f21")
+	return errors.Wrapff(f22(), errors.Fields{"q": 123.456}, "cause from f21")
 }
 
 func f22() error {
