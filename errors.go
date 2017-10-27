@@ -59,7 +59,27 @@ func (e *errors) Error() string {
 	var buf [1024]byte
 	msg := bytes.NewBuffer(buf[:0])
 
-	for i := len(e.stack) - 1; i >= 0; i-- {
+	/*
+		for i := len(e.stack) - 1; i >= 0; i-- {
+			err := e.stack[i]
+			if len(err.fileName) > 0 && err.fileLine != 0 {
+				msg.WriteString("[")
+				msg.WriteString(err.fileName)
+				msg.WriteString(":")
+				msg.WriteString(strconv.Itoa(err.fileLine))
+				msg.WriteString("] ")
+				msg.WriteString(err.msg)
+			} else {
+				msg.WriteString(err.msg)
+			}
+			if i > 0 {
+				msg.WriteString(": ")
+			}
+		}
+	*/
+
+	last := len(e.stack) - 1
+	for i := 0; i <= last; i++ {
 		err := e.stack[i]
 		if len(err.fileName) > 0 && err.fileLine != 0 {
 			msg.WriteString("[")
@@ -71,7 +91,7 @@ func (e *errors) Error() string {
 		} else {
 			msg.WriteString(err.msg)
 		}
-		if i > 0 {
+		if i < last {
 			msg.WriteString(": ")
 		}
 	}
