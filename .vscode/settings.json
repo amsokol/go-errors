@@ -1,0 +1,33 @@
+{
+    "cSpell.words": [
+        "Checkf",
+        "amsokol"
+    ],
+    "go.formatTool": "gofmt",
+    "go.gocodeAutoBuild": true,
+    "go.coverOnSingleTest": true,
+    "go.delveConfig": {
+        "useApiV1": false
+    },
+    "go.autocompleteUnimportedPackages": false,
+    "go.lintTool": "golangci-lint",
+    "go.editorContextMenuCommands": {
+        "toggleTestFile": true,
+        "addTags": true,
+        "removeTags": false,
+        "testAtCursor": true,
+        "testFile": false,
+        "testPackage": false,
+        "generateTestForFunction": true,
+        "generateTestForFile": true,
+        "generateTestForPackage": false,
+        "addImport": true,
+        "testCoverage": true,
+        "playground": true
+    },
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": true
+    },
+    "go.coverageOptions": "showBothCoveredAndUncoveredCode"
+}
