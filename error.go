@@ -2,13 +2,13 @@
 package errors
 
 import (
-	. "errors"
+	go_errors "errors"
 	"fmt"
 )
 
 // Error returns an error that formats as the given text.
 func Error(text string) error {
-	return New(text)
+	return go_errors.New(text)
 }
 
 // Errorf formats according to a format specifier and returns the string
