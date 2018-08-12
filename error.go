@@ -1,3 +1,4 @@
+// Package errors provides primitives for simple error handling primitives.
 package errors
 
 import (
