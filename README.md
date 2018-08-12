@@ -6,7 +6,7 @@
 [![Travis branch](https://img.shields.io/travis/amsokol/go-errors/master.svg)](https://travis-ci.org/amsokol/go-errors)
 [![Coverage Status](https://coveralls.io/repos/github/amsokol/go-errors/badge.svg?branch=master)](https://coveralls.io/github/amsokol/go-errors?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/amsokol/go-errors)](http://goreportcard.com/report/amsokol/go-errors)
-[![license](https://img.shields.io/github/license/amsokol/go-errors.svg)](https://github.com/amsokol/go-errors/blob/master/LICENSE.md)
+[![license](https://img.shields.io/github/license/amsokol/go-errors.svg)](https://github.com/amsokol/go-errors/blob/master/LICENSE)
 
 This library contains simple error handling primitives.
 
