@@ -3,6 +3,8 @@ language: go
 go:
   - "1.10.x"
   - tip
+env:
+ - GO111MODULE=on
 before_install:
   - go get -u github.com/mattn/goveralls
 script:
