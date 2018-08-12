@@ -3,8 +3,8 @@ language: go
 go:
   - "1.10.x"
 #  - "1.11"
-env:
- - GO111MODULE=on
+#env:
+# - GO111MODULE=on
 before_install:
   - go get -u github.com/mattn/goveralls
 script:
