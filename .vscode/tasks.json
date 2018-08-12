@@ -11,6 +11,19 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "run godoc",
+            "type": "shell",
+            "command": "echo 'Open url http://localhost:6060/pkg/github.com/amsokol/go-errors' ; godoc -http=:6060",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
         }
     ]
 }
