@@ -7,7 +7,7 @@ This library contains simple error handling primitives.
 ## Getting started / Prerequisites / Dependencies
 
 ```shell
-go get github.com/amsokol/go-errors
+go get -u github.com/amsokol/go-errors
 ```
 
 See usage [example](https://github.com/amsokol/go-errors/blob/master/example_test.go):
